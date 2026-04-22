@@ -6,15 +6,16 @@ O **Guincho Já** é um aplicativo web moderno para solicitação de serviços d
 
 ### Funcionalidades Principais
 
-- **Solicitação de Guincho**: Clientes podem solicitar reboque informando localização de origem e destino, detalhes do veículo e preferências.
-- **Rastreamento em Tempo Real**: Mapa interativo mostra a localização dos motoristas e o progresso do serviço, utilizando um sistema de mapas open-source e gratuito (Leaflet).
-- **Autenticação Segura**: Sistema de login via conta Google para acesso seguro à plataforma com Firebase Authentication.
-- **Perfis de Usuário**: Diferenciação entre clientes e motoristas com perfis personalizados.
-- **Código de Segurança**: O solicitante fornece um código para iniciar a corrida, garantindo proteção contra acessos não autorizados.
-- **Modo Offline para Motoristas**: Motoristas podem ficar offline quando não desejam receber novas corridas.
-- **Histórico de Corridas**: Sistema de histórico completo para motoristas e solicitantes, permitindo visualizar corridas passadas.
-- **Live Feed**: Feed em tempo real atualizando o usuário sobre os últimos eventos e atualizações no app.
-- **Avaliações**: Sistema de estrelas para avaliar motoristas após o serviço.
+- ✅ **Solicitação de Guincho**: Clientes podem solicitar reboque informando localização de origem e destino, detalhes do veículo e preferências.
+- 🗺️ **Rastreamento em Tempo Real**: Mapa interativo mostra a localização dos motoristas e o progresso do serviço, utilizando um sistema de mapas open-source e gratuito (Leaflet).
+- 🔐 **Autenticação Segura**: Sistema de login via conta Google para acesso seguro à plataforma com Firebase Authentication.
+- 👥 **Perfis de Usuário**: Diferenciação entre clientes e motoristas com perfis personalizados.
+- 🏪 **Destinos Pré-Definidos**: Concessionárias e mecânicos já registrados aparecem no mapa para facilitar a escolha de um destino rápido.
+- 🧾 **Código de Segurança**: O solicitante fornece um código para iniciar a corrida, garantindo proteção contra acessos não autorizados.
+- 🚫 **Modo Offline para Motoristas**: Motoristas podem ficar offline quando não desejam receber novas corridas.
+- 📜 **Histórico de Corridas**: Sistema de histórico completo para motoristas e solicitantes, permitindo visualizar corridas passadas.
+- 🔄 **Live Feed**: Feed em tempo real atualizando o usuário sobre os últimos eventos e atualizações no app.
+- ⭐ **Avaliações**: Sistema de estrelas para avaliar motoristas após o serviço.
 
 ### Tecnologias Utilizadas
 

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #000000;
+  --color-primary-hover: #1f2937;
+  --color-slate-900: #111111;
+  --color-slate-950: #000000;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-black transition-colors duration-300;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .dark body {
+    @apply bg-black text-white;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  @apply shadow-2xl;
+}
+
+.dark .glass {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.map-grid {
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .map-grid {
+  background-image: radial-gradient(#334155 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.marker-pulse {
+  animation: markerPulse 2s infinite;
+}
+
+@keyframes markerPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  70% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Custom scrollbar for dark theme */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+.desaturate-marker {
+  filter: none;
+}
+
+.map-tiles {
+  filter: none;
+}
+
+.dark .map-tiles {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.minimalist-popup .leaflet-popup-content-wrapper {
+  @apply rounded-xl bg-white/80 dark:bg-black/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-2xl;
+}
+
+.minimalist-popup .leaflet-popup-tip {
+  @apply bg-white/80 dark:bg-black/80;
+}
+

@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "App user, can be a customer or a driver",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["customer", "driver"] },
+        "avatar": { "type": "string" },
+        "rating": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "role"]
+    },
+    "TowRequest": {
+      "title": "Tow Request",
+      "description": "A request for a tow truck",
+      "type": "object",
+      "properties": {
+        "customerId": { "type": "string" },
+        "driverId": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "accepted", "in_progress", "completed", "cancelled"] },
+        "price": { "type": "number" },
+        "origin": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": "number" },
+            "lng": { "type": "number" },
+            "address": { "type": "string" }
+          }
+        },
+        "destination": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": "number" },
+            "lng": { "type": "number" },
+            "address": { "type": "string" }
+          }
+        },
+        "vehicleDetails": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["customerId", "status", "price", "origin", "destination"]
+    },
+    "DriverStatus": {
+      "title": "Driver Status",
+      "description": "Real-time status of a driver",
+      "type": "object",
+      "properties": {
+        "isOnline": { "type": "boolean" },
+        "lat": { "type": "number" },
+        "lng": { "type": "number" },
+        "lastActive": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "towRequests/{requestId}": {
+      "schema": "TowRequest",
+      "description": "Tow truck requests"
+    },
+    "driverStatus/{userId}": {
+      "schema": "DriverStatus",
+      "description": "Real-time driver location and online status"
+    }
+  }
+}

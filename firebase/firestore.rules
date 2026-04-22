@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isCustomer() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'customer';
+    }
+
+    function isDriver() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'driver';
+    }
+
+    // User Rules
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update: if isOwner(userId);
+    }
+
+    // TowRequest Rules
+    match /towRequests/{requestId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && isCustomer();
+      allow update: if isSignedIn() && (
+        request.resource.data.customerId == request.auth.uid ||
+        request.resource.data.driverId == request.auth.uid ||
+        isDriver()
+      );
+    }
+
+    // DriverStatus Rules
+    match /driverStatus/{userId} {
+      allow read: if isSignedIn();
+      allow write: if isOwner(userId);
+    }
+  }
+}

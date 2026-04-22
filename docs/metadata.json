@@ -1,0 +1,6 @@
+{
+  "name": "GuinchoExpress",
+  "description": "Plataforma de solicitação de guinchos em tempo real com mapa interativo e sistema de leilão/aceitação.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["real-time-collaboration", "interactive-maps"]
+}

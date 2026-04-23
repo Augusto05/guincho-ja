@@ -1,6 +1,4 @@
-# Guincho Já
-
-![Solicitação Inicial](docs/screenshots/preview.png)
+![Preview](docs/screenshots/preview.png)
 
 ## Descrição do Projeto
 

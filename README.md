@@ -1,5 +1,7 @@
 # Guincho Já
 
+![Solicitação Inicial](docs/screenshots/preview.png)
+
 ## Descrição do Projeto
 
 O **Guincho Já** é um aplicativo web moderno para solicitação de serviços de guincho (reboque de veículos). A plataforma conecta clientes que precisam de assistência veicular com motoristas de guincho disponíveis, oferecendo uma experiência intuitiva e em tempo real.
